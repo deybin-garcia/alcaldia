@@ -1,0 +1,116 @@
+:root{
+  --brand:#0d6efd;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --border:#e5e7eb;
+}
+html, body{height:100%;}
+body{display:flex;flex-direction:column;background:var(--bg);}
+main{flex:1 0 auto;}
+footer{flex-shrink:0;border-top:1px solid var(--border);background:#fff;position:sticky;bottom:0;}
+
+.brand-title{font-weight:800;letter-spacing:-0.02em;}
+.navbar .nav-link{font-weight:500;}
+.navbar .nav-link.active{color:var(--brand);}
+
+.card, .card-rounded{border-radius:1rem;background:var(--card);}
+.shadow-sm{box-shadow:0 10px 20px -10px rgba(0,0,0,.1) !important;}
+.btn-rounded{border-radius:.8rem;}
+.form-control, .form-select{border-radius:.8rem;}
+.form-floating>.form-control, .form-floating>.form-select{border-radius:.8rem;}
+
+.table thead th{background:#f1f5f9;white-space:nowrap;}
+.table tbody tr:hover{background:#f8fafc;}
+.table td, .table th{vertical-align:middle;}
+
+.alert-soft{border-radius:.8rem;}
+.badge-soft{background:#e7f1ff;color:#0d6efd;border:1px solid #cfe2ff;}
+
+.toolbar{gap:.5rem;flex-wrap:wrap;}
+.sticky-actions{position:sticky;top:0;z-index:10;background:#fff;padding:.5rem;border-bottom:1px solid #eee;}
+.tooltip-inner{max-width:320px;}
+
+.spinner-export{display:none;}
+.exporting .spinner-export{display:inline-block;}
+.exporting .icon-export{display:none;}
+
+/* Dark theme adjustments */
+html[data-bs-theme="dark"]{
+  --bg:#0b1020;
+  --card:#0f172a;
+  --border:#1f2a44;
+}
+html[data-bs-theme="dark"] body{background:var(--bg);}
+html[data-bs-theme="dark"] .navbar, html[data-bs-theme="dark"] footer{background:#0f172a!important;border-color:var(--border);}
+html[data-bs-theme="dark"] .card{background:var(--card);border-color:var(--border);}
+html[data-bs-theme="dark"] .table thead th{background:#111827;color:#d1d5db;}
+html[data-bs-theme="dark"] .table tbody tr:hover{background:#0b1324;}
+
+/* Sticky table head inside responsive container */
+.table-responsive{--thead-sticky-top: 56px;}
+.table-responsive .table thead th{
+  position: sticky; top: 0; z-index: 2;
+  box-shadow: inset 0 -1px 0 var(--border);
+}
+
+/* Filters card look */
+#filtros, .filters, .filter-card{
+  border:1px dashed var(--border);
+  background:rgba(13,110,253,.02);
+  border-radius:1rem;
+  padding: 1rem;
+}
+
+/* Action buttons group */
+.actions .btn{ min-width: 2.25rem; }
+
+/* Inputs and selects */
+.form-control:focus, .form-select:focus{
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.15);
+  border-color: rgba(13,110,253,.4);
+}
+
+/* Badges status */
+.badge-success-soft{ background:#e9fbe7; color:#0f5132; border:1px solid #c7efc2; }
+.badge-warning-soft{ background:#fff4e5; color:#664d03; border:1px solid #ffe0b3; }
+.badge-danger-soft{ background:#fde2e1; color:#842029; border:1px solid #f5b5b3; }
+
+/* Modals */
+.modal-content{ border-radius:1rem; }
+.modal-header{ border-bottom-color: var(--border); }
+.modal-footer{ border-top-color: var(--border); }
+
+/* Small helpers */
+.text-muted-sm{ color:#6b7280; font-size:.9rem; }
+.header-icon{ width:2.25rem; height:2.25rem; display:inline-flex; align-items:center; justify-content:center; border-radius:.8rem; background:rgba(13,110,253,.08); }
+.section-title{ display:flex; align-items:center; gap:.5rem; }
+.section-title .title{ margin:0; }
+
+
+/* Layout with left sidebar */
+.app-layout{min-height:100vh;background:var(--bg);}
+.sidebar{width:280px;background:#ffffff;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;}
+.sidebar-nav{display:flex;flex-direction:column;gap:.25rem;}
+.sidebar-link{display:flex;align-items:center;gap:.5rem;padding:.625rem .75rem;border-radius:.6rem;color:#334155;text-decoration:none;}
+.sidebar-link:hover{background:#f1f5f9;}
+.sidebar-link.active{background:rgba(13,110,253,.12);color:#0d6efd;font-weight:600;}
+.sidebar-footer{margin-top:auto;}
+.app-topbar{height:56px;background:#fff;}
+.app-content main{padding-left:.5rem;padding-right:.5rem;}
+@media (max-width: 991.98px){
+  .sidebar{position:fixed;left:-280px;transition:all .25s ease;z-index:1020;}
+  .sidebar.open{left:0;}
+  .app-content{margin-left:0;}
+}
+
+/* Nice forms */
+.form-section .card{border:1px solid var(--border);}
+.form-section .form-floating>.form-control{min-height:3.25rem;}
+.form-actions{display:flex;gap:.5rem;flex-wrap:wrap;}
+
+/* Headings with icon */
+.section-title{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;}
+.section-title .header-icon{width:2.25rem;height:2.25rem;display:inline-flex;align-items:center;justify-content:center;border-radius:.8rem;background:rgba(13,110,253,.08);}
+
+/* Containers alignment within app content */
+.container, .container-fluid{max-width:1400px}

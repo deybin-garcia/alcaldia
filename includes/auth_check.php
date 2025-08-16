@@ -1,0 +1,1 @@
+<?php if (empty($_SESSION['user'])) { header('Location: ?page=login'); exit; } ?>

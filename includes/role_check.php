@@ -1,0 +1,1 @@
+<?php function is_admin(){ return !empty($_SESSION['user']) && $_SESSION['user']['rol']==='Administrador'; } ?>
